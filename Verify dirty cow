@@ -1,2 +1,6 @@
 #!/bin/bash
 sudo rpm -q --changelog kernel | grep CVE-2016-5195
+[ec2-user@ip-172-31-18-185 ~]$ sudo rpm -q --changelog kernel | grep CVE-2016-5195
+- [mm] remove gup_flags FOLL_WRITE games from __get_user_pages() (Larry Woodman) [1385124] {CVE-2016-5195}
+[ec2-user@ip-172-31-18-185 ~]$ 
+
