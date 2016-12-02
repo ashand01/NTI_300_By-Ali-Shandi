@@ -1,0 +1,28 @@
+
+#!/bin/bash
+sudo yum clean all && sudo yum update kernel && sudo reboot
+#echo used this command on my AWS machine 
+
+sudo yum clean all && sudo yum update kernel && sudo reboot
+Loaded plugins: amazon-id, rhui-lb, search-disabled-repos
+Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast
+Cleaning repos: rhui-REGION-client-config-server-7
+              : rhui-REGION-rhel-server-releases
+              : rhui-REGION-rhel-server-rh-common
+Cleaning up everything
+Loaded plugins: amazon-id, rhui-lb, search-disabled-repos
+rhui-REGION-client-config-server-7                       | 2.9 kB     00:00     
+rhui-REGION-rhel-server-releases                         | 3.5 kB     00:00     
+rhui-REGION-rhel-server-rh-common                        | 3.8 kB     00:00     
+(1/7): rhui-REGION-client-config-server-7/x86_64/primary_d | 5.4 kB   00:00     
+(2/7): rhui-REGION-rhel-server-releases/7Server/x86_64/gro | 701 kB   00:00     
+(3/7): rhui-REGION-rhel-server-releases/7Server/x86_64/upd | 1.7 MB   00:00     
+(4/7): rhui-REGION-rhel-server-rh-common/7Server/x86_64/gr |  104 B   00:00     
+(5/7): rhui-REGION-rhel-server-rh-common/7Server/x86_64/up |  29 kB   00:00     
+(6/7): rhui-REGION-rhel-server-rh-common/7Server/x86_64/pr | 110 kB   00:00     
+(7/7): rhui-REGION-rhel-server-releases/7Server/x86_64/pri |  31 MB   00:00     
+No packages marked for update
+PolicyKit daemon disconnected from the bus.
+We are no longer a registered authentication agent.
+Connection to ec2-54-191-134-6.us-west-2.compute.amazonaws.com closed by remote host.
+Connection to ec2-54-191-134-6.us-west-2.compute.amazonaws.com closed.
