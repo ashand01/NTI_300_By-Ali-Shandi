@@ -11,3 +11,5 @@ def install_apache():
    os.system('sudo systemctl start httpd.service')
 
    print('please open a security setting for port 80 on your server')
+ 
+install_apache()
