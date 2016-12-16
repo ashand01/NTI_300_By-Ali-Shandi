@@ -49,43 +49,52 @@ apache.install_apache()
 
 
 #Django 
-import os
-def django_install():
-   print('Installing Django Framework.')
-   print('Current version of Python:')
-  
 
-   print('Installing virtualenv to give Django its own version of Python.')
-   os.system('rpm -iUvh https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm')
-   os.system('yum -y install python-pip')
-   os.system('pip install virtualenv')
-   os.system('cd /opt')
-   os.system('mkdir django')
-   os.system('chown -R ec2-user django')
-   os.system('sleep 5')
-   os.system('cd /opt/django')
-   os.system('virtualenv django-env')
+#!/bin/bash
 
-   print('Activating virtualenv.')
-   os.system('source /opt/django/django-env/bin/activate')
+echo "Current version of Python:"
 
-   print('To switch out of virtualenv type: deactivate.')
-   print('Now using this version of Python:')
-   os.system('which python')
+python --version
 
-   print('Adjusting permissions for Django directory.')
-   os.system('chown -R ec2-user /django')
+echo "Installing virtualenv to give Django it's own version of Python..."
 
-   print('Installing Django.')
-   os.system('pip install Django')
+rpm -iUvh https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
+yum -y install python-pip
 
-   print('Django Admin is version:')
-   os.system('django-admin --version')
+pip install virtualenv
+cd /opt
 
-   print('Creating new Django Project.')
-   os.system('django-admin startproject Project1')
+mkdir django
+chown -R ec2-user django
+sleep 5
+cd django
+virtualenv django-env
 
-django_install()
+echo "Activating virtualenv..."
+
+source /opt/django/django-env/bin/activate
+
+echo "To switch out of virtualenv, type deactivate."
+
+echo "Now using this version of Python:"
+
+which python
+sudo chown -R ec2-user /opt/django
+
+echo "installing django"
+
+sudo pip install Django
+
+echo "Django admin is version:"
+
+django-admin --version
+django-admin startproject project1
+
+echo "This is the new django project directory..."
+
+tree project1
+
+echo "Go to https://docs.djangoproject.com/en/1.10/intro/tutorial01/ to begin first Django Project!"
 
 #crontab.py
 
