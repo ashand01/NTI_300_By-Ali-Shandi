@@ -7,7 +7,7 @@ import pprint
 ec2 = boto3.resource('ec2')
 client = boto3.client('ec2')
 
-amazon_image = 'ami-2051294a'                                       # This will launch a red hat instance
+amazon_image = 'ami-6f68cf0f'                                       # This will launch a red hat instance
 amazon_instance = 't2.micro'                                        # we've been working with micro's, if you use Amizon Linux, you could launch a nono
 amazon_pem_key = 'Redhat300'                    # the name of the key/pem file you would like to use to access this machine
 firewall_profiles = ['launch-wizard-6']                             # the security group name(s) you would like to use, remember, this is your firewall, make sure the ports you want open are open
