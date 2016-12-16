@@ -99,7 +99,7 @@ crontab()
 
 def start_django():
   print('Starting the Django Web Server')
-  os.system('python /django/project1/manage.py runserver 0.0.0.0:8000&')
+  os.system('python /opt/django/project1/manage.py runserver 0.0.0.0:8000&')
 start_django()
 """
 
