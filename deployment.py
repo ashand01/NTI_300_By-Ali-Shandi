@@ -49,52 +49,35 @@ apache.install_apache()
 
 
 #Django 
+def django_install():
 
-#!/bin/bash
+print('Installing Django')
+    os.system('python --version')
+    os.system('rpm -iUvh https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm')
+    os.system('yum -y install python-pip')
 
-echo "Current version of Python:"
+    os.system('pip install virtualenv')
+    os.system('cd /opt')
 
-python --version
+    os.system('mkdir django')
+    os.system('chown -R ec2-user django')
+    os.system('sleep 5')
+    os.system('cd django')
+    os.system('virtualenv django-env')
 
-echo "Installing virtualenv to give Django it's own version of Python..."
+    os.system('source /opt/django/django-env/bin/activate')
 
-rpm -iUvh https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
-yum -y install python-pip
+    os.system('which python')
+    os.system('chown -R ec2-user /opt/django')
 
-pip install virtualenv
-cd /opt
+    os.system('pip install Django')
 
-mkdir django
-chown -R ec2-user django
-sleep 5
-cd django
-virtualenv django-env
+    os.system('django-admin --version')
+    os.system('django-admin startproject project1')
 
-echo "Activating virtualenv..."
+    os.system('tree project1')
 
-source /opt/django/django-env/bin/activate
-
-echo "To switch out of virtualenv, type deactivate."
-
-echo "Now using this version of Python:"
-
-which python
-sudo chown -R ec2-user /opt/django
-
-echo "installing django"
-
-sudo pip install Django
-
-echo "Django admin is version:"
-
-django-admin --version
-django-admin startproject project1
-
-echo "This is the new django project directory..."
-
-tree project1
-
-echo "Go to https://docs.djangoproject.com/en/1.10/intro/tutorial01/ to begin first Django Project!"
+django_install()
 
 #crontab.py
 
