@@ -67,14 +67,14 @@ def django_install():
    os.system('virtualenv django-env')
 
    print('Activating virtualenv.')
-   os.system('source /opt/django/django-env/bin/activate')
+   os.system('source /django/django-env/bin/activate')
 
    print('To switch out of virtualenv type: deactivate.')
    print('Now using this version of Python:')
    os.system('which python')
 
    print('Adjusting permissions for Django directory.')
-   os.system('chown -R ec2-user /opt/django')
+   os.system('chown -R ec2-user /django')
 
    print('Installing Django.')
    os.system('pip install Django')
@@ -107,7 +107,7 @@ crontab()
 
 def start_django():
   print('Starting the Django Web Server')
-  os.system('python /opt/django/project1/manage.py runserver 0.0.0.0:8000&')
+  os.system('python /django/project1/manage.py runserver 0.0.0.0:8000&')
 start_django()
 """
 
