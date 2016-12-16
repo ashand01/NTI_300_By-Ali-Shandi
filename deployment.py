@@ -51,7 +51,7 @@ apache.install_apache()
 #Django 
 def django_install():
 
-print('Installing Django')
+    print('Installing Django')
     os.system('python --version')
     os.system('rpm -iUvh https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm')
     os.system('yum -y install python-pip')
