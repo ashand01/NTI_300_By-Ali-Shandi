@@ -63,11 +63,11 @@ def django_install():
    os.system('mkdir django')
    os.system('chown -R ec2-user django')
    os.system('sleep 5')
-   os.system('cd django')
+   os.system('cd /opt/django')
    os.system('virtualenv django-env')
 
    print('Activating virtualenv.')
-   os.system('source /django/django-env/bin/activate')
+   os.system('source /opt/django/django-env/bin/activate')
 
    print('To switch out of virtualenv type: deactivate.')
    print('Now using this version of Python:')
