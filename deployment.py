@@ -104,7 +104,7 @@ start_django()
 
    )
 
-  pprint.pprint(instances)
+   pprint.pprint(instances)
 
 
 launch_test_instance()
